@@ -1,0 +1,11 @@
+.venv/
+benchmark/
+.agentloop/
+**/__pycache__/
+*.py[cod]
+.env
+.env.*
+!*.env.example
+results/**/*.log
+results/smoke/
+results/c1/tech_*.json

@@ -1,0 +1,60 @@
+diff --git a/evaluations/dd/scorers/oracle_chem.py b/evaluations/dd/scorers/oracle_chem.py
+index 333e377..1fbf872 100644
+--- a/evaluations/dd/scorers/oracle_chem.py
++++ b/evaluations/dd/scorers/oracle_chem.py
+@@ -162,0 +163,55 @@ def score_numeric_property(agent_output: str, task: dict) -> dict:
++def molecular_weight_score(agent_output: str, task: dict) -> dict:
++    """Score the inline exact-molecular-weight task.
++
++    The task index references this public scorer name, but upstream commit
++    c413f660 does not define it.  This compatibility implementation follows
++    the task's documented ``{SMILES: ExactMolWt}`` schema and tolerance.
++    """
++    try:
++        agent_data = json.loads(agent_output.strip())
++    except Exception as exc:
++        return {
++            "validity": 0.0,
++            "correctness": 0.0,
++            "details": {"error": f"JSON Parse Error: {exc}"},
++        }
++    if not isinstance(agent_data, dict):
++        return {
++            "validity": 0.0,
++            "correctness": 0.0,
++            "details": {"error": "Output is not a JSON object"},
++        }
++
++    expected = task.get("ground_truth", {})
++    tolerance = float(task.get("scoring_logic", {}).get("tolerance_da", 0.01))
++    if not isinstance(expected, dict) or not expected:
++        return {
++            "validity": 1.0,
++            "correctness": 0.0,
++            "details": {"error": "Task has no inline ground_truth mapping"},
++        }
++
++    n_correct = 0
++    invalid_values = 0
++    for smiles, expected_value in expected.items():
++        try:
++            value = float(agent_data[smiles])
++        except (KeyError, TypeError, ValueError):
++            invalid_values += 1
++            continue
++        if abs(value - float(expected_value)) <= tolerance:
++            n_correct += 1
++
++    return {
++        "validity": 1.0,
++        "correctness": round(n_correct / len(expected), 4),
++        "details": {
++            "metric": "ExactMolWt",
++            "tolerance_da": tolerance,
++            "n_samples": len(expected),
++            "n_correct": n_correct,
++            "invalid_or_missing": invalid_values,
++        },
++    }
++
++
