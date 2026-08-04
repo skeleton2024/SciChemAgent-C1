@@ -1,6 +1,7 @@
 .venv/
 benchmark/
 .agentloop/
+submission/
 **/__pycache__/
 *.py[cod]
 .env
