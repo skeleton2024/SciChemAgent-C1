@@ -10,3 +10,7 @@ submission/
 results/**/*.log
 results/smoke/
 results/c1/tech_*.json
+results/c4/reg_*.json
+.codex/PROJECT_STATE.md
+.codex/PR_DRAFT.md
+.codex/SUBMISSION_MANIFEST.md

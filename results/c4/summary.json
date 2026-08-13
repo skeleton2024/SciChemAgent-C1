@@ -1,0 +1,76 @@
+{
+  "task_count": 6,
+  "aggregation": "unweighted arithmetic mean across six C4 tasks after explicit per-task normalization to [0,1]; reg_05 raw correctness and strategic_success are percentages",
+  "mean_executability": 1.0,
+  "mean_validity": 1.0,
+  "mean_correctness_normalized": 0.89977035135086,
+  "mean_strategic_success_normalized": 0.3035333333333334,
+  "tasks": [
+    {
+      "task_id": "reg_01_toxicophore",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 0.6871,
+      "strategic_success": 0.0,
+      "correctness_scale": 1.0,
+      "correctness_normalized": 0.6871,
+      "strategic_success_scale": 1.0,
+      "strategic_success_normalized": 0.0
+    },
+    {
+      "task_id": "reg_02_herg",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 0.8909820126397666,
+      "strategic_success": 0.0,
+      "correctness_scale": 1.0,
+      "correctness_normalized": 0.8909820126397666,
+      "strategic_success_scale": 1.0,
+      "strategic_success_normalized": 0.0
+    },
+    {
+      "task_id": "reg_03_pains",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 0.9928400954653938,
+      "strategic_success": 0.0,
+      "correctness_scale": 1.0,
+      "correctness_normalized": 0.9928400954653938,
+      "strategic_success_scale": 1.0,
+      "strategic_success_normalized": 0.0
+    },
+    {
+      "task_id": "reg_03_pains_v1",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 0.8277,
+      "strategic_success": 0.8212,
+      "correctness_scale": 1.0,
+      "correctness_normalized": 0.8277,
+      "strategic_success_scale": 1.0,
+      "strategic_success_normalized": 0.8212
+    },
+    {
+      "task_id": "reg_04_metabolic_softspot",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 1.0,
+      "strategic_success": 0.0,
+      "correctness_scale": 1.0,
+      "correctness_normalized": 1.0,
+      "strategic_success_scale": 1.0,
+      "strategic_success_normalized": 0.0
+    },
+    {
+      "task_id": "reg_05_cyanide_trap",
+      "executability": 1.0,
+      "validity": 1.0,
+      "correctness": 100.0,
+      "strategic_success": 100.0,
+      "correctness_scale": 100.0,
+      "correctness_normalized": 1.0,
+      "strategic_success_scale": 100.0,
+      "strategic_success_normalized": 1.0
+    }
+  ]
+}
