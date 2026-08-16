@@ -310,8 +310,8 @@ KNOWN_SOFT_SPOTS = {
 
 def _fallback_soft_spot(mapped_smiles: str) -> tuple[int, str, str]:
     mol = Chem.MolFromSmiles(mapped_smiles)
-    if mol is None:
-        return 1, "Most accessible mapped atom selected for oxidation.", "CYP450"
+    if mol is None or mol.GetNumAtoms() == 0:
+        raise ValueError("Atom-mapped SMILES must contain a valid, non-empty molecule")
     for atom in mol.GetAtoms():
         if atom.GetAtomicNum() == 6 and atom.GetTotalNumHs() >= 2:
             if any(neighbor.GetAtomicNum() in (7, 8, 16) for neighbor in atom.GetNeighbors()):

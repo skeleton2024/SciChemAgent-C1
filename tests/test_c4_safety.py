@@ -38,6 +38,15 @@ class MetabolicSoftSpotTests(unittest.TestCase):
         self.assertEqual(result["atom_or_group"], "1")
         self.assertEqual(result["metabolic_enzyme"], "CYP2D6")
 
+    def test_unseen_reference_rejects_empty_or_invalid_smiles(self) -> None:
+        for mapped_smiles in ("", "not-a-smiles"):
+            with self.subTest(mapped_smiles=mapped_smiles):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "valid, non-empty molecule",
+                ):
+                    c4_safety._fallback_soft_spot(mapped_smiles)
+
 
 class PythonSelectionTests(unittest.TestCase):
     def test_windows_virtual_environment_takes_precedence(self) -> None:
