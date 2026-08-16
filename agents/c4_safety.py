@@ -312,23 +312,28 @@ def _fallback_soft_spot(mapped_smiles: str) -> tuple[int, str, str]:
     mol = Chem.MolFromSmiles(mapped_smiles)
     if mol is None or mol.GetNumAtoms() == 0:
         raise ValueError("Atom-mapped SMILES must contain a valid, non-empty molecule")
+    atom_maps = [atom.GetAtomMapNum() for atom in mol.GetAtoms()]
+    if any(atom_map <= 0 for atom_map in atom_maps):
+        raise ValueError("Atom-mapped SMILES must map every atom with a positive integer")
+    if len(set(atom_maps)) != len(atom_maps):
+        raise ValueError("Atom-mapped SMILES must use a unique map number for every atom")
     for atom in mol.GetAtoms():
         if atom.GetAtomicNum() == 6 and atom.GetTotalNumHs() >= 2:
             if any(neighbor.GetAtomicNum() in (7, 8, 16) for neighbor in atom.GetNeighbors()):
                 return (
-                    atom.GetAtomMapNum() or atom.GetIdx(),
+                    atom.GetAtomMapNum(),
                     "Heteroatom-adjacent carbon is susceptible to oxidative dealkylation.",
                     "CYP3A4",
                 )
     for atom in mol.GetAtoms():
         if atom.GetIsAromatic() and atom.GetTotalNumHs() > 0:
             return (
-                atom.GetAtomMapNum() or atom.GetIdx(),
+                atom.GetAtomMapNum(),
                 "Accessible aromatic carbon is susceptible to hydroxylation.",
                 "CYP450",
             )
     atom = mol.GetAtomWithIdx(0)
-    return atom.GetAtomMapNum() or 0, "Most accessible atom selected for oxidation.", "CYP450"
+    return atom.GetAtomMapNum(), "Most accessible atom selected for oxidation.", "CYP450"
 
 
 def _metabolic_soft_spots(file_path: str) -> list[dict[str, Any]]:

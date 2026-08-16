@@ -47,6 +47,29 @@ class MetabolicSoftSpotTests(unittest.TestCase):
                 ):
                     c4_safety._fallback_soft_spot(mapped_smiles)
 
+    def test_unseen_reference_requires_positive_unique_atom_maps(self) -> None:
+        cases = {
+            "CO": "map every atom",
+            "[CH3:0][OH:1]": "map every atom",
+            "[CH3:1][OH:1]": "unique map number",
+        }
+        for mapped_smiles, message in cases.items():
+            with self.subTest(mapped_smiles=mapped_smiles):
+                with self.assertRaisesRegex(ValueError, message):
+                    c4_safety._fallback_soft_spot(mapped_smiles)
+
+    def test_unseen_reference_tracks_atom_map_renumbering(self) -> None:
+        original = c4_safety._fallback_soft_spot(
+            "[CH3:1][O:2][CH2:3][CH3:4]"
+        )
+        renumbered = c4_safety._fallback_soft_spot(
+            "[CH3:11][O:12][CH2:13][CH3:14]"
+        )
+
+        self.assertEqual(original[0], 1)
+        self.assertEqual(renumbered[0], 11)
+        self.assertEqual(original[1:], renumbered[1:])
+
 
 class PythonSelectionTests(unittest.TestCase):
     def test_windows_virtual_environment_takes_precedence(self) -> None:

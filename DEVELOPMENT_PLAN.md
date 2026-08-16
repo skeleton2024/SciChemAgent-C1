@@ -78,6 +78,8 @@ requires explicit user approval.
 
 - Add chemistry metamorphic tests: atom renumbering, equivalent SMILES,
   duplicated motifs, invalid rows, and stable output ordering.
+- Treat atom-map integrity and renumbering tests as input-contract evidence;
+  they do not establish biological accuracy on unseen molecules.
 - For learned hERG and PAINS-v1 tasks, report deterministic scaffold-split or
   grouped cross-validation metrics using only the supplied training labels.
 - Define an internal OOD scorecard per task; never use scorer ground-truth files
