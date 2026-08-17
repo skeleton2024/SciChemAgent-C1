@@ -317,6 +317,13 @@ def _fallback_soft_spot(mapped_smiles: str) -> tuple[int, str, str]:
         raise ValueError("Atom-mapped SMILES must map every atom with a positive integer")
     if len(set(atom_maps)) != len(atom_maps):
         raise ValueError("Atom-mapped SMILES must use a unique map number for every atom")
+    symmetry_ranks = list(
+        Chem.CanonicalRankAtoms(mol, breakTies=False, includeAtomMaps=False)
+    )
+
+    def candidate_key(atom: Chem.Atom) -> tuple[int, int]:
+        return symmetry_ranks[atom.GetIdx()], atom.GetAtomMapNum()
+
     hetero_adjacent = [
         atom
         for atom in mol.GetAtoms()
@@ -327,7 +334,7 @@ def _fallback_soft_spot(mapped_smiles: str) -> tuple[int, str, str]:
         )
     ]
     if hetero_adjacent:
-        atom = min(hetero_adjacent, key=lambda candidate: candidate.GetAtomMapNum())
+        atom = min(hetero_adjacent, key=candidate_key)
         return (
             atom.GetAtomMapNum(),
             "Heteroatom-adjacent carbon is susceptible to oxidative dealkylation.",
@@ -339,16 +346,16 @@ def _fallback_soft_spot(mapped_smiles: str) -> tuple[int, str, str]:
         if atom.GetIsAromatic() and atom.GetTotalNumHs() > 0
     ]
     if aromatic:
-        atom = min(aromatic, key=lambda candidate: candidate.GetAtomMapNum())
+        atom = min(aromatic, key=candidate_key)
         return (
             atom.GetAtomMapNum(),
             "Accessible aromatic carbon is susceptible to hydroxylation.",
             "CYP450",
         )
-    atom = min(mol.GetAtoms(), key=lambda candidate: candidate.GetAtomMapNum())
+    atom = min(mol.GetAtoms(), key=candidate_key)
     return (
         atom.GetAtomMapNum(),
-        "Lowest map-number atom selected as a deterministic fallback.",
+        "Canonical structure rank selected as a deterministic fallback.",
         "CYP450",
     )
 

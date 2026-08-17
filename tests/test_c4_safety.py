@@ -70,6 +70,18 @@ class MetabolicSoftSpotTests(unittest.TestCase):
         self.assertEqual(renumbered[0], 11)
         self.assertEqual(original[1:], renumbered[1:])
 
+    def test_unseen_reference_tracks_non_monotonic_atom_map_renumbering(self) -> None:
+        original = c4_safety._fallback_soft_spot(
+            "[CH3:1][O:2][CH2:3][CH3:4]"
+        )
+        renumbered = c4_safety._fallback_soft_spot(
+            "[CH3:40][O:30][CH2:10][CH3:20]"
+        )
+
+        self.assertEqual(original[0], 1)
+        self.assertEqual(renumbered[0], 40)
+        self.assertEqual(original[1:], renumbered[1:])
+
     def test_unseen_reference_is_invariant_to_smiles_atom_order(self) -> None:
         equivalent_pairs = (
             (
