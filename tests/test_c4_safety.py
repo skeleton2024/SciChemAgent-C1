@@ -70,6 +70,26 @@ class MetabolicSoftSpotTests(unittest.TestCase):
         self.assertEqual(renumbered[0], 11)
         self.assertEqual(original[1:], renumbered[1:])
 
+    def test_unseen_reference_is_invariant_to_smiles_atom_order(self) -> None:
+        equivalent_pairs = (
+            (
+                "[CH3:1][O:2][CH2:3][CH3:4]",
+                "[CH3:4][CH2:3][O:2][CH3:1]",
+            ),
+            (
+                "[cH:1]1[cH:2][cH:3][cH:4][cH:5][cH:6]1",
+                "[cH:4]1[cH:3][cH:2][cH:1][cH:6][cH:5]1",
+            ),
+            ("[CH3:1][CH3:2]", "[CH3:2][CH3:1]"),
+        )
+        for first, reordered in equivalent_pairs:
+            with self.subTest(first=first, reordered=reordered):
+                first_result = c4_safety._fallback_soft_spot(first)
+                reordered_result = c4_safety._fallback_soft_spot(reordered)
+
+                self.assertEqual(first_result, reordered_result)
+                self.assertEqual(first_result[0], 1)
+
 
 class PythonSelectionTests(unittest.TestCase):
     def test_windows_virtual_environment_takes_precedence(self) -> None:

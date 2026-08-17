@@ -78,6 +78,9 @@ requires explicit user approval.
 
 - Add chemistry metamorphic tests: atom renumbering, equivalent SMILES,
   duplicated motifs, invalid rows, and stable output ordering.
+- Use the lowest positive atom-map number only as a deterministic tie-breaker
+  among candidates in the same heuristic class, so equivalent mapped SMILES
+  do not change the fallback prediction when their traversal order changes.
 - Treat atom-map integrity and renumbering tests as input-contract evidence;
   they do not establish biological accuracy on unseen molecules.
 - For learned hERG and PAINS-v1 tasks, report deterministic scaffold-split or
