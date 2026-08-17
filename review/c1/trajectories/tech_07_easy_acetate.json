@@ -1,0 +1,31 @@
+{
+  "task_id": "tech_07_easy_acetate",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "Role: You are a Cheminformatics Technician.\\nGiven data: Use the provided input JSON (field: file_path) to load a CSV with columns ID and PDB_PATH. Each PDB already contains the explicit intended protonation state.\\nYour task: For each row, compute the total formal charge from the structure and return ONLY a JSON list with schema [{\"ID\": \"...\", \"Formal_Charge\": int|null}]. If parsing fails, return null for that ID. Do not return code or explanations.",
+      "input": {
+        "file_path": "tasks_batch/data/Formal_Charge_easy_001.csv"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_07_easy_acetate.json",
+      "sha256": "fa8f45dcb458649ae500e1a25d78b7b08f36ec0d3bd8b35eb3186051e9a7a584"
+    }
+  ]
+}

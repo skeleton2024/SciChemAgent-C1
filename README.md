@@ -43,6 +43,18 @@ Machine-readable aggregates are stored in `results/c1/summary.json` and
 `results/c4/summary.json`; CSV versions are included alongside them. Raw logs
 and machine-specific per-run records are intentionally excluded.
 
+Reviewer-facing C1 evidence is stored in `review/c1/`. It contains the exact
+JSON solution and a compact execution trajectory for every one of the 18
+public C1 tasks. Because this agent is deterministic and does not call an LLM
+or tools, each trajectory has one execution step rather than a hidden chain of
+reasoning. The bundle intentionally excludes scorer internals, ground truth,
+wall-clock timings, and machine-specific paths. Rebuild and verify it with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\export_c1_review_bundle.py
+.\.venv\Scripts\python.exe scripts\export_c1_review_bundle.py --check
+```
+
 The staged robustness and generalization roadmap is in
 [`DEVELOPMENT_PLAN.md`](DEVELOPMENT_PLAN.md).
 
@@ -148,11 +160,13 @@ The runner and verifier accept another checkout without moving the pinned one:
 - `agents/c4_safety.py` — offline C4 agent
 - `agents/c4_alert_catalog.json` — static structural-alert rules
 - `scripts/run_c1.py`, `scripts/run_c4.py` — index-driven evaluators
+- `scripts/export_c1_review_bundle.py` — public per-task C1 solutions and trajectories
 - `scripts/verify_results.py`, `scripts/verify_c4_results.py` — independent verification
 - `tests/` — fast regression tests for agent invariants
 - `DEVELOPMENT_PLAN.md` — prioritized development gates and known limitations
 - `patches/` — reproducible upstream compatibility patches
 - `results/c1/`, `results/c4/` — aggregate machine-readable results
+- `review/c1/` — reviewer-facing C1 run evidence without scorer internals
 
 ## License
 

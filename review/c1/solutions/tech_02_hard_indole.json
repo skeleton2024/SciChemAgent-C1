@@ -1,0 +1,17 @@
+{
+  "task_id": "tech_02_hard_indole",
+  "solution": {
+    "matches": [
+      "c1ccc2c(c1)cc[nH]2",
+      "NCCc1c[nH]c2ccccc12",
+      "NCCc1c[nH]c2ccc(O)cc12",
+      "O=C(O)Cc1c[nH]c2ccccc12",
+      "CC(=O)NCCc1c[nH]c2ccc(OC)cc12",
+      "O=C(O)[C@@H](N)Cc1c[nH]c2ccccc12",
+      "CN(C)CCc1c[nH]c2ccccc12",
+      "CC(C)(C)OC(=O)NC(Cc1c[nH]c2ccccc12)C(=O)O",
+      "Cl.NCCc1c[nH]c2ccc(O)cc12",
+      "[2H]c1c([2H])c([2H])c2[nH]ccc2c1[2H]"
+    ]
+  }
+}

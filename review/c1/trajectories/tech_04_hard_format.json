@@ -1,0 +1,31 @@
+{
+  "task_id": "tech_04_hard_format",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "You are provided with a dataset file 'tasks_batch/data/Format_Conversion_hard_10.csv' containing an 'ID' column and an 'XYZ_BLOCK' column. The XYZ blocks contain the 3D coordinates of molecules but lack connectivity and bond order information.\n\nWrite a Python script to:\n1. Load the dataset.\n2. Parse each XYZ block into an RDKit molecule.\n3. Reconstruct the full molecule, strictly inferring all correct chemical bonds, bond orders (single, double, aromatic), and preserving stereochemistry based on the 3D geometry.\n4. Convert the reconstructed molecule into a canonical SMILES string.\n5. Output the results to stdout as a JSON list of dictionaries. Each dictionary must have keys: 'ID' and 'SMILES' (the reconstructed canonical SMILES).",
+      "input": {
+        "file_path": "tasks_batch/data/Format_Conversion_hard_10.csv"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_04_hard_format.json",
+      "sha256": "948426fa3f13315649cb9c4c49fe0ec647a49c4e3436f2ed237596732350dd75"
+    }
+  ]
+}

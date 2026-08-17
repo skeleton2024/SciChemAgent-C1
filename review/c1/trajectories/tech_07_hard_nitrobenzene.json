@@ -1,0 +1,31 @@
+{
+  "task_id": "tech_07_hard_nitrobenzene",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "Role: You are an Advanced Cheminformatics Technician.\\nGiven data: Use the provided input JSON (field: file_path) to load a CSV with columns ID and PDB_PATH. Note: These PDB files are heavy-atom-only coordinates (they lack hydrogens, CONECT records, and explicit charge labels).\\nYour task: The molecules exist in a physiological environment at pH 7.4. You must computationally deduce the correct chemical topology and formal charge strictly from the available 3D spatial coordinates. Return ONLY a JSON list with schema [{\"ID\": \"...\", \"Formal_Charge\": int|null}]. If parsing fails, return null for that ID. Do not return code or explanations.",
+      "input": {
+        "file_path": "tasks_batch/data/Formal_Charge_hard_003.csv"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_07_hard_nitrobenzene.json",
+      "sha256": "0bea7eee8ed8cead3ff8abb8d09edef52ccc9262fda60cb4b0325ed5cb694970"
+    }
+  ]
+}

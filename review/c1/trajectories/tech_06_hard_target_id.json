@@ -1,0 +1,31 @@
+{
+  "task_id": "tech_06_hard_target_id",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "You are provided with 'tasks_batch/data/Target_ID_hard_tasks.csv' and 'tasks_batch/data/Target_ID_hard_database.csv'.\n\nThe task file contains disease names. The database contains ontology-linked disease-target associations and supporting metadata. Write a Python script to:\n1. Load both files.\n2. For each disease in the task file, identify the correct database records corresponding to that disease.\n3. From those records, determine the most appropriate target or targets to return for each disease based on the database evidence.\n4. Output a JSON list in the format: [{\"ID\": original_name, \"TARGETS\": comma_separated_targets}].",
+      "input": {
+        "file_path": "tasks_batch/data/Target_ID_hard_tasks.csv"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_06_hard_target_id.json",
+      "sha256": "42378da973030b46c8d0c4496ab6fd3c5ad0ad443b6437809575b39cf0efceda"
+    }
+  ]
+}

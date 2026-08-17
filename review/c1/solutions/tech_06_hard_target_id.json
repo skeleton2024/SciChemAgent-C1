@@ -1,0 +1,21 @@
+{
+  "task_id": "tech_06_hard_target_id",
+  "solution": [
+    {
+      "ID": "T2DM",
+      "TARGETS": "PPARG,INSR"
+    },
+    {
+      "ID": "Lou Gehrig's disease",
+      "TARGETS": "SOD1"
+    },
+    {
+      "ID": "Stone Man Syndrome",
+      "TARGETS": "ALK2"
+    },
+    {
+      "ID": "VHL syndrome",
+      "TARGETS": "PHD2"
+    }
+  ]
+}

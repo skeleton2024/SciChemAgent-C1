@@ -1,0 +1,37 @@
+{
+  "task_id": "tech_01_mw",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "You are given a list of SMILES strings. For each molecule, calculate its exact molecular weight (using RDKit's Descriptors.ExactMolWt). Return the results as a JSON object printed to stdout, where keys are the original SMILES strings and values are the molecular weights rounded to 4 decimal places.",
+      "input": {
+        "smiles": [
+          "CCO",
+          "c1ccccc1",
+          "CC(=O)O",
+          "CC(=O)Oc1ccccc1C(=O)O",
+          "Cn1c(=O)c2c(ncn2C)n(C)c1=O"
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_01_mw.json",
+      "sha256": "63861d4c2ce2ceb845340a9ca178f09ee0ed843e1f78e41aa9b02311458e7aa9"
+    }
+  ]
+}
