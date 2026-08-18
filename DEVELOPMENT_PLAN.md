@@ -82,6 +82,9 @@ requires explicit user approval.
   class that ignores atom-map values. Use the lowest positive map number only
   to break true symmetry ties, so traversal order and arbitrary renumbering do
   not change which distinguishable atom the fallback selects.
+- Cover duplicated metabolic motifs and verify that batch output retains input
+  row order; this is deterministic-contract evidence, not a claim that the
+  selected symmetric atom is biologically preferred.
 - Treat atom-map integrity and renumbering tests as input-contract evidence;
   they do not establish biological accuracy on unseen molecules.
 - For learned hERG and PAINS-v1 tasks, report deterministic scaffold-split or

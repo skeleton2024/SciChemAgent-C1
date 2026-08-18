@@ -102,6 +102,42 @@ class MetabolicSoftSpotTests(unittest.TestCase):
                 self.assertEqual(first_result, reordered_result)
                 self.assertEqual(first_result[0], 1)
 
+    def test_duplicated_motifs_are_stable_and_preserve_row_order(self) -> None:
+        first = "[CH3:1][O:2][CH2:3][CH2:4][O:5][CH3:6]"
+        reordered = "[CH3:6][O:5][CH2:4][CH2:3][O:2][CH3:1]"
+        self.assertEqual(
+            c4_safety._fallback_soft_spot(first),
+            c4_safety._fallback_soft_spot(reordered),
+        )
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "query.csv"
+            with path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=["ID", "Molecule", "Atom-mapped SMILES"],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    (
+                        {
+                            "ID": "new-b",
+                            "Molecule": "duplicated-motif-reordered",
+                            "Atom-mapped SMILES": reordered,
+                        },
+                        {
+                            "ID": "new-a",
+                            "Molecule": "duplicated-motif",
+                            "Atom-mapped SMILES": first,
+                        },
+                    )
+                )
+
+            results = c4_safety._metabolic_soft_spots(str(path))
+
+        self.assertEqual([result["id"] for result in results], ["new-b", "new-a"])
+        self.assertEqual([result["atom_or_group"] for result in results], ["1", "1"])
+
 
 class PythonSelectionTests(unittest.TestCase):
     def test_windows_virtual_environment_takes_precedence(self) -> None:
