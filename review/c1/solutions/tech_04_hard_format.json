@@ -1,0 +1,45 @@
+{
+  "task_id": "tech_04_hard_format",
+  "solution": [
+    {
+      "ID": "MOL_01",
+      "SMILES": "[H]c1c([H])c([H])c([H])c([H])c1[H]"
+    },
+    {
+      "ID": "MOL_02",
+      "SMILES": "[H]OC(=O)c1c([H])c([H])c([H])c([H])c1OC(=O)C([H])([H])[H]"
+    },
+    {
+      "ID": "MOL_03",
+      "SMILES": "[H]c1nc2c(c(=O)n(C([H])([H])[H])c(=O)n2C([H])([H])[H])n1C([H])([H])[H]"
+    },
+    {
+      "ID": "MOL_04",
+      "SMILES": "[H]OC(=O)[C@@]([H])(c1c([H])c([H])c(C([H])([H])C([H])(C([H])([H])[H])C([H])([H])[H])c([H])c1[H])C([H])([H])[H]"
+    },
+    {
+      "ID": "MOL_05",
+      "SMILES": "[H]OC(=O)c1nc([H])c([H])nc1[H]"
+    },
+    {
+      "ID": "MOL_06",
+      "SMILES": "[H]c1c([H])c([H])c(-c2nc3c([H])c([H])c([H])c([H])c3n2[H])c([H])c1[H]"
+    },
+    {
+      "ID": "MOL_07",
+      "SMILES": "[H]c1c([H])c([H])c2c([H])c([H])c(=O)oc2c1[H]"
+    },
+    {
+      "ID": "MOL_08",
+      "SMILES": "[H]Oc1c([H])c([H])c(C([H])([H])C([H])([H])N([H])[H])c([H])c1O[H]"
+    },
+    {
+      "ID": "MOL_09",
+      "SMILES": "[H]Oc1c([H])c([H])c(N([H])C(=O)C([H])([H])[H])c([H])c1[H]"
+    },
+    {
+      "ID": "MOL_10",
+      "SMILES": "[H]C1([H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])C1([H])[H]"
+    }
+  ]
+}

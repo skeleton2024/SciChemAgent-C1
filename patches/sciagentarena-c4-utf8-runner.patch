@@ -1,0 +1,12 @@
+diff --git a/evaluations/dd/runners/batch_runner.py b/evaluations/dd/runners/batch_runner.py
+--- a/evaluations/dd/runners/batch_runner.py
++++ b/evaluations/dd/runners/batch_runner.py
+@@ -249,7 +249,7 @@ def main(argv: list[str] | None = None) -> None:
+     args = parser.parse_args(argv)
+ 
+     # Load task
+-    with open(args.task_json) as f:
++    with open(args.task_json, encoding="utf-8") as f:
+         task = json.load(f)
+ 
+     # Check forbidden imports before running

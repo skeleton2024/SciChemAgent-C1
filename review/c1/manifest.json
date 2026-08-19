@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "category": "C1",
+  "task_count": 18,
+  "benchmark_revision": "c413f660304bf5def1c54a23619267e3ee2ef6ad",
+  "agent": "agents/c1_baseline.py",
+  "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+  "execution_model": "deterministic_single_step",
+  "network_used": false,
+  "artifacts": [
+    {
+      "task_id": "tech_01_hard_tpsa",
+      "solution": "solutions/tech_01_hard_tpsa.json",
+      "solution_sha256": "4b36ecb4d6a386b0162a6c36457d61721ca6a62dfdbd43d3b591894cceb825c0",
+      "trajectory": "trajectories/tech_01_hard_tpsa.json",
+      "trajectory_sha256": "69bfe244fb07ff17f889b0355da473f7da46f775d27ea370412d00b71381cadc"
+    },
+    {
+      "task_id": "tech_01_hard_logp",
+      "solution": "solutions/tech_01_hard_logp.json",
+      "solution_sha256": "7c4631324ce3c8c10543412822c2706b9ac9466b0026b8cd342f0216cfbc8052",
+      "trajectory": "trajectories/tech_01_hard_logp.json",
+      "trajectory_sha256": "7bc6aedeb6947621392c1c15e2ddeeb5052ff7a959c42de68e2ac32f24077322"
+    },
+    {
+      "task_id": "tech_01_hard_mw",
+      "solution": "solutions/tech_01_hard_mw.json",
+      "solution_sha256": "56a2d6a806bb1200a3b603378ecea4b17eca1c6011aad1826880f3cba27810cb",
+      "trajectory": "trajectories/tech_01_hard_mw.json",
+      "trajectory_sha256": "3699cafeb0c179f5a9d8663557867713e84a9cfbd653f96272a7b7ede3f4e6e8"
+    },
+    {
+      "task_id": "tech_01_mw",
+      "solution": "solutions/tech_01_mw.json",
+      "solution_sha256": "63861d4c2ce2ceb845340a9ca178f09ee0ed843e1f78e41aa9b02311458e7aa9",
+      "trajectory": "trajectories/tech_01_mw.json",
+      "trajectory_sha256": "6e81c22829f5101dbd78fb85885fbb095d06e61de897d2f25f251fc4b5c62792"
+    },
+    {
+      "task_id": "tech_02_hard_indole",
+      "solution": "solutions/tech_02_hard_indole.json",
+      "solution_sha256": "5fd60d355bde0d27823461796103faa12d605451b0bd5d8788c3e41342b5d79b",
+      "trajectory": "trajectories/tech_02_hard_indole.json",
+      "trajectory_sha256": "a4ca529aac240238ce92db7fe97a837d2921a7cb0940d11d4b6f9e0b0bcefca9"
+    },
+    {
+      "task_id": "tech_03_hard_similarity",
+      "solution": "solutions/tech_03_hard_similarity.json",
+      "solution_sha256": "0be56b34f47eee2169ae791d4ccaff712acbb80d9120064232ea24543435242c",
+      "trajectory": "trajectories/tech_03_hard_similarity.json",
+      "trajectory_sha256": "bf807f2413eead81f16590bbd9af039ada3fac27c2a4c922dc759124a0538f31"
+    },
+    {
+      "task_id": "tech_04_hard_format",
+      "solution": "solutions/tech_04_hard_format.json",
+      "solution_sha256": "948426fa3f13315649cb9c4c49fe0ec647a49c4e3436f2ed237596732350dd75",
+      "trajectory": "trajectories/tech_04_hard_format.json",
+      "trajectory_sha256": "06bdadd7e3fe842d0a8684437cc1c6d7e9fc6846ac0cecb5b8b98e13f889026e"
+    },
+    {
+      "task_id": "tech_06_hard_target_id",
+      "solution": "solutions/tech_06_hard_target_id.json",
+      "solution_sha256": "42378da973030b46c8d0c4496ab6fd3c5ad0ad443b6437809575b39cf0efceda",
+      "trajectory": "trajectories/tech_06_hard_target_id.json",
+      "trajectory_sha256": "41d9883979b7ce0fcca81f4b11b4b1b9335304aed3e3e6569e43dc459a8780f7"
+    },
+    {
+      "task_id": "tech_07_easy_acetate",
+      "solution": "solutions/tech_07_easy_acetate.json",
+      "solution_sha256": "fa8f45dcb458649ae500e1a25d78b7b08f36ec0d3bd8b35eb3186051e9a7a584",
+      "trajectory": "trajectories/tech_07_easy_acetate.json",
+      "trajectory_sha256": "47176e1ba4860c4edebc8d01de3073ec1ba144703366a079be32f5196b23f84e"
+    },
+    {
+      "task_id": "tech_07_easy_trimethylammonium",
+      "solution": "solutions/tech_07_easy_trimethylammonium.json",
+      "solution_sha256": "0771f270dde19ee9db9490fdd0f22982d83edfccdb09738848c7419b4e5e1e8c",
+      "trajectory": "trajectories/tech_07_easy_trimethylammonium.json",
+      "trajectory_sha256": "c2a896d36cec61abfb472a1e8e43cf07b683405dcd3b93adf3150acd6c2a5bb0"
+    },
+    {
+      "task_id": "tech_07_hard_aceticacid",
+      "solution": "solutions/tech_07_hard_aceticacid.json",
+      "solution_sha256": "a70b6af1cc63727d3b5aac880747d47322c8f86774ed59702984d9cd96261ab4",
+      "trajectory": "trajectories/tech_07_hard_aceticacid.json",
+      "trajectory_sha256": "59b8c918c59dcea4d2afb647a2345e31376d9415deb6073663954ee210d731a2"
+    },
+    {
+      "task_id": "tech_07_hard_citrate",
+      "solution": "solutions/tech_07_hard_citrate.json",
+      "solution_sha256": "d1726811d5dac9c2aa91a7c18ea39b9c7f6fe432fab6f1d4a3df58f00948e10d",
+      "trajectory": "trajectories/tech_07_hard_citrate.json",
+      "trajectory_sha256": "503f214ec4ad435fdc775014664a26cbf83077bf8deb6b85bef45ad75f5d31da"
+    },
+    {
+      "task_id": "tech_07_hard_nitrobenzene",
+      "solution": "solutions/tech_07_hard_nitrobenzene.json",
+      "solution_sha256": "0bea7eee8ed8cead3ff8abb8d09edef52ccc9262fda60cb4b0325ed5cb694970",
+      "trajectory": "trajectories/tech_07_hard_nitrobenzene.json",
+      "trajectory_sha256": "e24323df3804b7285da9e86a30cc2136df8983b5b78bf2fac4c513cbdb186438"
+    },
+    {
+      "task_id": "tech_07_medium_glycine",
+      "solution": "solutions/tech_07_medium_glycine.json",
+      "solution_sha256": "a87bb92c6eae1873278f26cf95388e98bf781f3be1ad835c40724e1b244cdb0e",
+      "trajectory": "trajectories/tech_07_medium_glycine.json",
+      "trajectory_sha256": "ba0611c09fac3c6574bcd81781487aec93d58118a8de2b2fa48c961f26b2e7fc"
+    },
+    {
+      "task_id": "tech_07_medium_hard_benzoate",
+      "solution": "solutions/tech_07_medium_hard_benzoate.json",
+      "solution_sha256": "28dfa27f6d18086b77e2be6081c79134622c00794a26b8f2bc04fd0006d581f3",
+      "trajectory": "trajectories/tech_07_medium_hard_benzoate.json",
+      "trajectory_sha256": "25896d0b6e138d842aeddae3142a672533d0c142e15f393afd6f3759e5a86021"
+    },
+    {
+      "task_id": "tech_07_medium_hard_imidazole",
+      "solution": "solutions/tech_07_medium_hard_imidazole.json",
+      "solution_sha256": "fd6808752a9c0c5c0a0a2b34e6300bbeb4bd0a171dc3865b0b378a20cf9d9941",
+      "trajectory": "trajectories/tech_07_medium_hard_imidazole.json",
+      "trajectory_sha256": "051cdc96c30008959d82ba099ee8797ad582b6d542b0f4d31bd2e8886a355b3b"
+    },
+    {
+      "task_id": "tech_07_medium_hard_pyridinium",
+      "solution": "solutions/tech_07_medium_hard_pyridinium.json",
+      "solution_sha256": "dd3344365f96edb3d4507f16f272844219f242406a3a424a1662a1d6a3acba17",
+      "trajectory": "trajectories/tech_07_medium_hard_pyridinium.json",
+      "trajectory_sha256": "6fd3c5ae7dd94b598a49f2ca243ae1db4c7692fa1950facacbc8b828072fbee1"
+    },
+    {
+      "task_id": "tech_07_medium_lysine",
+      "solution": "solutions/tech_07_medium_lysine.json",
+      "solution_sha256": "9aad91bba71e08a0d863bfd966a2cc5d054a2f30e1fd74bae748a982364bdbea",
+      "trajectory": "trajectories/tech_07_medium_lysine.json",
+      "trajectory_sha256": "2e53a224a3ffa3da3a8a85b9eaf84341b5d796c76398bc09caf0d92807f31fa5"
+    }
+  ]
+}

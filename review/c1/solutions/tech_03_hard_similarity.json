@@ -1,0 +1,105 @@
+{
+  "task_id": "tech_03_hard_similarity",
+  "solution": [
+    {
+      "SMILES": "N[C@@H](Cc1cc(O)c(O)cc1)C(=O)O",
+      "Similarity": 1.0,
+      "Rank": 1
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "Similarity": 1.0,
+      "Rank": 2
+    },
+    {
+      "SMILES": "N[C@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "Similarity": 1.0,
+      "Rank": 3
+    },
+    {
+      "SMILES": "Cl.N[C@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "Similarity": 0.9642857142857143,
+      "Rank": 4
+    },
+    {
+      "SMILES": "Cl.N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "Similarity": 0.9642857142857143,
+      "Rank": 5
+    },
+    {
+      "SMILES": "[Na+].N[C@@H](Cc1ccc(O)c(O)c1)C(=O)[O-]",
+      "Similarity": 0.696969696969697,
+      "Rank": 6
+    },
+    {
+      "SMILES": "N[C@H](Cc1ccc(O)c(OC)c1)C(=O)O",
+      "Similarity": 0.6666666666666666,
+      "Rank": 7
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(OC)c(O)c1)C(=O)O",
+      "Similarity": 0.6666666666666666,
+      "Rank": 8
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(O)c(OC)c1)C(=O)O",
+      "Similarity": 0.6666666666666666,
+      "Rank": 9
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)OC",
+      "Similarity": 0.6571428571428571,
+      "Rank": 10
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(O)cc1)C(=O)O",
+      "Similarity": 0.6451612903225806,
+      "Rank": 11
+    },
+    {
+      "SMILES": "CC(=O)N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "Similarity": 0.5945945945945946,
+      "Rank": 12
+    },
+    {
+      "SMILES": "CC(N)Cc1ccc(O)c(O)c1",
+      "Similarity": 0.59375,
+      "Rank": 13
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccccc1)C(=O)O",
+      "Similarity": 0.5806451612903226,
+      "Rank": 14
+    },
+    {
+      "SMILES": "N[C@@H](Cc1ccc(O)c(O)c1)CO",
+      "Similarity": 0.5757575757575758,
+      "Rank": 15
+    },
+    {
+      "SMILES": "[NH3+][C@@H](Cc1ccc(O)c(O)c1)C(=O)[O-]",
+      "Similarity": 0.5277777777777778,
+      "Rank": 16
+    },
+    {
+      "SMILES": "NCCc1ccc(O)c(O)c1",
+      "Similarity": 0.45454545454545453,
+      "Rank": 17
+    },
+    {
+      "SMILES": "NCC(O)c1ccc(O)c(O)c1",
+      "Similarity": 0.35135135135135137,
+      "Rank": 18
+    },
+    {
+      "SMILES": "CNC[C@H](O)c1ccc(O)c(O)c1",
+      "Similarity": 0.2926829268292683,
+      "Rank": 19
+    },
+    {
+      "SMILES": "c1ccccc1",
+      "Similarity": 0.07142857142857142,
+      "Rank": 20
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "tech_01_hard_logp",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "You are provided with a dataset file 'tasks_batch/data/Mass_Property_Calculation_hard_20.csv' containing a 'SMILES' column. These SMILES strings come from real-world molecular databases and may require careful preprocessing before property calculation. Write a Python script to:\n1. Load the CSV.\n2. Use RDKit to prepare each molecule in an appropriate standardized form for consistent LogP calculation.\n3. Calculate the standard MolLogP (LogP) for the resulting molecule.\n4. If a SMILES is fundamentally invalid or cannot be processed reliably, output null for the LogP.\n5. Output the results as a JSON list of dictionaries to stdout. Each dictionary must have keys: 'SMILES' (the exact original raw string) and 'LogP' (the calculated value).",
+      "input": {
+        "file_path": "tasks_batch/data/Mass_Property_Calculation_hard_20.csv"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_01_hard_logp.json",
+      "sha256": "7c4631324ce3c8c10543412822c2706b9ac9466b0026b8cd342f0216cfbc8052"
+    }
+  ]
+}

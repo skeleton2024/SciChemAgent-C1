@@ -1,0 +1,32 @@
+{
+  "task_id": "tech_03_hard_similarity",
+  "execution_model": "deterministic_single_step",
+  "events": [
+    {
+      "step": 1,
+      "event": "task_received",
+      "prompt": "You are provided with a dataset file 'tasks_batch/data/Similarity_Search_hard_20.csv' containing a 'SMILES' column. The query molecule is L-DOPA: 'N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O'.\n\nWrite a Python script to:\n1. Load the dataset.\n2. Compute Morgan fingerprints (radius=2, nBits=2048) for the query and all database molecules.\n3. Calculate the Tanimoto similarity between the query and each molecule.\n4. Rank the molecules in descending order of their similarity.\n5. Output the results as a JSON list of dictionaries to stdout. Each dictionary must have keys: 'SMILES' (the exact original raw string), 'Similarity' (the float value), and 'Rank' (integer starting from 1).",
+      "input": {
+        "file_path": "tasks_batch/data/Similarity_Search_hard_20.csv",
+        "query_smiles": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O"
+      }
+    },
+    {
+      "step": 2,
+      "event": "agent_executed",
+      "entrypoint": "agents/c1_baseline.py",
+      "agent_sha256": "a12e058cb6dc6a59814f0e070ea0461e28df67422ee00452898059a2f338c4f3",
+      "network_used": false,
+      "returncode": 0,
+      "timed_out": false,
+      "stderr_empty": true
+    },
+    {
+      "step": 3,
+      "event": "solution_emitted",
+      "format": "json_stdout",
+      "path": "solutions/tech_03_hard_similarity.json",
+      "sha256": "0be56b34f47eee2169ae791d4ccaff712acbb80d9120064232ea24543435242c"
+    }
+  ]
+}
